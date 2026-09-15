@@ -6,3 +6,6 @@
 @media(max-width:700px){.book-art{padding-top:100px}.book-stamp{width:68px;height:68px;font-size:9px}.hero-art{height:440px}.astronaut{bottom:35px;right:12px}}
 @media(max-width:380px){.hero-art{height:395px}}
 .hero-art:before{transform:none}
+/* Keep the full business name at one consistent type size. */
+.brand-small{display:inline;font:inherit;letter-spacing:0;margin:0 0 0 .28em}
+@media(max-width:700px){.brand-small{font:inherit}}
