@@ -12,6 +12,7 @@
 
 /* Free coloring sample: static PDFs, with the actual Letter page as preview. */
 .hero-actions,.download-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-actions{gap:20px}
 .hero-actions .button,.download-actions .button{margin-top:0;justify-content:center;gap:12px}
 .hero-actions .button{padding-inline:18px;font-size:14px}
 .button-secondary{background:transparent;color:var(--green)}
