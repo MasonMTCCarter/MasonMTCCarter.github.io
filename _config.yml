@@ -1,7 +1,7 @@
-# Keep sitemap URLs aligned with CNAME and the homepage canonical link.
+title: Little Wonder Paper Co.
+description: High-quality printables, digital art, and paper goods.
 url: "https://www.littlewonderpaperco.works"
-baseurl: ""
+
+# This enables the SEO plugin
 plugins:
-  - jekyll-sitemap
-exclude:
-  - README.md
+  - jekyll-seo-tag
