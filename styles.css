@@ -9,3 +9,20 @@
 /* Keep the full business name at one consistent type size. */
 .brand-small{display:inline;font:inherit;letter-spacing:0;margin:0 0 0 .28em}
 @media(max-width:700px){.brand-small{font:inherit}}
+
+/* Free coloring sample: static PDFs, with the actual Letter page as preview. */
+.hero-actions,.download-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-actions .button,.download-actions .button{margin-top:0;justify-content:center;gap:12px}
+.hero-actions .button{padding-inline:18px;font-size:14px}
+.button-secondary{background:transparent;color:var(--green)}
+.button-secondary:hover{background:var(--sage);color:var(--green)}
+.free-coloring{display:grid;grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr);align-items:center;gap:clamp(28px,5vw,64px);padding-block:56px;border-bottom:1px solid var(--line)}
+.free-coloring-preview{width:100%;max-width:290px;justify-self:center;border:1px solid var(--line);box-shadow:0 8px 24px #49362912;background:white}
+.free-coloring-preview img{width:100%}
+.free-coloring-copy{min-width:0}.free-coloring h2{font-size:clamp(32px,3vw,42px)}
+.free-coloring-copy>p{margin-top:16px;font-size:16px}
+.free-coloring-copy .free-format{font-size:14px;color:var(--muted)}
+.download-actions{margin-top:22px}.download-actions .button{font-size:14px;padding:13px 18px}
+.free-coloring-copy .free-printing{font-size:13px;color:var(--muted)}
+.free-coloring-copy .free-disclosure{font-size:12px;color:var(--muted);margin-top:8px}
+@media(max-width:700px){.hero-actions{flex-direction:column;align-items:stretch}.free-coloring{grid-template-columns:1fr;padding-block:40px;gap:28px}.free-coloring-preview{max-width:230px}.download-actions{flex-direction:column;align-items:stretch}}
