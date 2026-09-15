@@ -1,0 +1,7 @@
+# Keep sitemap URLs aligned with CNAME and the homepage canonical link.
+url: "https://www.littlewonderpaperco.works"
+baseurl: ""
+plugins:
+  - jekyll-sitemap
+exclude:
+  - README.md
