@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Jekyll SEO Tag automatically inserts meta tags here -->
+    {% seo %}
+    
+    <!-- Link to your existing mobile icon -->
+    <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
+    
+    <!-- Basic styling to get you started -->
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        header { background: #fafafa; padding: 2rem 1rem; text-align: center; border-bottom: 1px solid #eee; }
+        nav a { margin: 0 15px; text-decoration: none; color: #555; font-weight: bold; }
+        nav a:hover { color: #000; }
+        main { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .hero-image { max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; }
+        footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: #777; border-top: 1px solid #eee; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Little Wonder Paper Co.</h1>
+        <nav>
+            <a href="{{ '/' | relative_url }}">Home</a>
+            <a href="#shop">Shop Bundles</a>
+            <a href="#freebies">Freebies</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- This is where your page content will be injected -->
+        {{ content }}
+    </main>
+
+    <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} Little Wonder Paper Co. All rights reserved.</p>
+    </footer>
+</body>
+</html>
