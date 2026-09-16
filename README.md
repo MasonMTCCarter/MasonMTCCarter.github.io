@@ -9,3 +9,10 @@ The repository enables GitHub Pages' supported `jekyll-sitemap` plugin. It gener
 For a Jekyll page that should not appear in the sitemap, set `sitemap: false` in its YAML front matter. Keep drafts unpublished. Do not add a static `sitemap.xml`, which would override automatic generation.
 
 `robots.txt` references the canonical `https://www.littlewonderpaperco.works/sitemap.xml` URL.
+
+## Third-party scripts
+
+Payhip purchases use ordinary HTTPS links rather than a third-party checkout
+script. Pinterest tracking is loaded only after visitors explicitly accept it.
+The homepage includes a restrictive Content Security Policy that limits script
+execution and Pinterest network access to the required origins.
