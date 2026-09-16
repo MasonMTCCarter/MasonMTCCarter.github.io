@@ -97,6 +97,10 @@ def main() -> int:
         errors.append("cannot inspect references because index.html is missing")
     else:
         document = index.read_text(encoding="utf-8")
+        if "https://payhip.com/payhip.js" in document:
+            errors.append("index.html must not load the third-party Payhip JavaScript")
+        if 'http-equiv="Content-Security-Policy"' not in document:
+            errors.append("index.html is missing an enforcing Content-Security-Policy")
         parsed = ReferenceParser()
         parsed.feed(document)
         missing_anchors = REQUIRED_ANCHORS - parsed.anchors
