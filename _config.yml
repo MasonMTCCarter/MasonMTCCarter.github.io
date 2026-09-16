@@ -5,3 +5,4 @@ url: "https://www.littlewonderpaperco.works"
 # This enables the SEO plugin
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
