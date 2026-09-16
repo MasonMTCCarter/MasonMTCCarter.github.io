@@ -6,6 +6,8 @@
 @media(max-width:700px){.book-art{padding-top:100px}.book-stamp{width:68px;height:68px;font-size:9px}.hero-art{height:440px}.astronaut{bottom:35px;right:12px}}
 @media(max-width:380px){.hero-art{height:395px}}
 .hero-art:before{transform:none}
+button{font:inherit}
+.consent-notice{position:fixed;right:20px;bottom:20px;z-index:9;width:min(560px,calc(100% - 40px));display:flex;align-items:center;gap:22px;padding:20px 22px;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 30px #49362924}.consent-notice[hidden]{display:none}.consent-title{font:700 18px Georgia,serif;line-height:1.2}.consent-notice p+p{margin-top:7px;font-size:13px;line-height:1.45;color:var(--muted)}.consent-actions{display:flex;flex-shrink:0;gap:8px;align-items:center}.consent-button,.privacy-settings{border:1px solid var(--green);border-radius:7px;padding:10px 13px;cursor:pointer;font-size:13px;font-weight:700;line-height:1.2}.consent-button:focus-visible,.privacy-settings:focus-visible{outline:3px solid #9b4e24;outline-offset:3px}.consent-reject{background:transparent;color:var(--green)}.consent-accept{background:var(--green);color:var(--paper)}.consent-button:hover{transform:translateY(-1px)}.consent-reject:hover{background:var(--sage)}.consent-accept:hover{background:#304735}.privacy-settings{background:transparent;color:inherit;border-color:currentColor}.privacy-settings:hover{color:#f4dfa0}.footer-utility{display:flex;align-items:center;gap:20px}.footer-utility a{padding:7px 0}
 /* Keep the full business name at one consistent type size. */
 .brand-small{display:inline;font:inherit;letter-spacing:0;margin:0 0 0 .28em}
 @media(max-width:700px){.brand-small{font:inherit}}
@@ -27,3 +29,4 @@
 .free-coloring-copy .free-printing{font-size:13px;color:var(--muted)}
 .free-coloring-copy .free-disclosure{font-size:12px;color:var(--muted);margin-top:8px}
 @media(max-width:700px){.hero-actions{flex-direction:column;align-items:stretch}.free-coloring{grid-template-columns:1fr;padding-block:40px;gap:28px}.free-coloring-preview{max-width:230px}.download-actions{flex-direction:column;align-items:stretch}}
+@media(max-width:700px){.consent-notice{right:12px;bottom:12px;width:calc(100% - 24px);display:block;padding:18px}.consent-actions{margin-top:14px}.consent-button{flex:1}.footer-utility{align-items:flex-start;flex-direction:column;gap:8px}}
