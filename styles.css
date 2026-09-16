@@ -145,11 +145,15 @@ figcaption h3 { margin-top: 9px; font-size: 25px; }
 .about p { font-size: 16px; }
 .about .about-detail { margin-bottom: 16px; color: var(--color-muted); font-size: 13px; }
 .contact-section { padding-bottom: clamp(60px, 8vw, 96px); }
-.contact-panel { position: relative; overflow: hidden; padding: clamp(28px, 5vw, 48px); border: 1px solid #d9cc9b; border-radius: var(--radius-panel); background: var(--color-warm); box-shadow: 0 10px 0 var(--color-quiet); }
+.contact-panel { position: relative; overflow: hidden; padding: clamp(32px, 5vw, 58px) clamp(28px, 7vw, 82px); border: 1px solid #d9cc9b; border-radius: var(--radius-panel); background: var(--color-warm); box-shadow: 0 10px 0 var(--color-quiet); }
+.contact-panel::after { position: absolute; right: -48px; bottom: -95px; width: 240px; height: 240px; content: ""; border: 1px solid #9f743544; border-radius: 50%; box-shadow: 0 0 0 18px #9f74351a, 0 0 0 36px #9f74350f; }
 .contact-eyebrow { margin-bottom: 14px; color: var(--color-ink); }
 .contact-panel h2, .contact-copy { max-width: 700px; }
 .contact-copy { margin-top: 18px; color: var(--color-muted); }
-.contact-link { display: inline-flex; min-height: 52px; align-items: center; max-width: 100%; margin-top: 26px; padding: 13px 20px; overflow-wrap: anywhere; border: 2px solid var(--color-ink); border-radius: 8px; background: var(--color-surface); color: var(--color-ink); font-weight: 700; text-decoration: none; }
+.contact-action { position: relative; z-index: 1; display: inline-flex; flex-direction: column; align-items: flex-start; margin-top: 30px; }
+.contact-label { margin-bottom: 9px; color: var(--color-brand); font-size: 11px; font-weight: 700; letter-spacing: .14em; line-height: 1.4; text-transform: uppercase; }
+.contact-link { display: inline-flex; min-height: 70px; align-items: center; max-width: 100%; padding: 14px 24px; overflow-wrap: anywhere; border: 2px solid var(--color-brand); border-radius: 10px; background: var(--color-surface); color: var(--color-brand); font-family: Georgia, "Times New Roman", serif; font-size: clamp(24px, 3.2vw, 42px); font-weight: 700; letter-spacing: -.025em; line-height: 1.15; text-decoration: none; box-shadow: 6px 6px 0 #3f5b4622; transition: background .2s, color .2s, transform .2s, box-shadow .2s; }
+.contact-link:hover { background: var(--color-brand); color: var(--color-surface); transform: translate(-2px, -2px); box-shadow: 8px 8px 0 #3f5b4633; }
 
 /* Footer and Pinterest consent */
 footer { background: var(--color-brand); color: var(--color-page); }
@@ -228,6 +232,9 @@ footer a:hover { color: #f4dfa0; }
   .about-logo img { width: 210px; }
   .about-logo span { font-size: 17px; }
   .about h2 { font-size: 36px; }
+  .contact-panel { padding: 30px 24px 36px; }
+  .contact-action { display: flex; width: 100%; }
+  .contact-link { width: 100%; padding: 14px 16px; font-size: clamp(21px, 6.2vw, 30px); }
   .footer-main { flex-direction: column; gap: 25px; padding-block: 34px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; font-size: 11px; }
   .footer-utility { align-items: flex-start; flex-direction: column; gap: 8px; }
