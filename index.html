@@ -9,18 +9,6 @@ image: /assets/social-preview.jpg
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
-  <!-- Pinterest Tag -->
-  <script>
-  !function(e){if(!window.pintrk){window.pintrk = function () {
-  window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
-  pintrk('load', '2613241918623');
-  pintrk('page');
-  pintrk('track', 'pagevisit', {
-    event_id: 'eventId0001'
-  });
-  </script>
-  <!-- end Pinterest Tag -->
-  
   <!-- Jekyll SEO Plugin -->
   {% seo %}
   
@@ -28,9 +16,20 @@ image: /assets/social-preview.jpg
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="consent.js" defer></script>
 </head>
 <body id="top">
 <a class="skip-link" href="#main">Skip to content</a>
+<section class="consent-notice" id="pinterest-consent" role="dialog" aria-labelledby="pinterest-consent-title" aria-describedby="pinterest-consent-description" hidden>
+  <div>
+    <p class="consent-title" id="pinterest-consent-title">Choose Pinterest tracking</p>
+    <p id="pinterest-consent-description">Pinterest tracking helps us measure visits and marketing performance. It is optional, and the site remains fully usable if you reject it.</p>
+  </div>
+  <div class="consent-actions">
+    <button class="consent-button consent-reject" type="button" data-consent="rejected">Reject tracking</button>
+    <button class="consent-button consent-accept" type="button" data-consent="accepted">Accept tracking</button>
+  </div>
+</section>
 <header class="site-header wrap">
   <a class="brand" href="#top" aria-label="Little Wonder Paper Co. home"><img src="assets/logo-160.webp" srcset="assets/logo-160.webp 160w, assets/logo-320.webp 320w" sizes="76px" width="160" height="160" alt="Bunny and bird Little Wonder Paper Co. logo"><span>Little Wonder<span class="brand-small">Paper Co.</span></span></a>
   <nav aria-label="Main navigation"><a href="#products">Products</a><a href="#artwork">Artwork</a><a href="#about">About</a></nav>
@@ -85,6 +84,6 @@ image: /assets/social-preview.jpg
     </div>
   </section>
 </main>
-<footer><div class="wrap footer-main"><div><a class="footer-brand" href="#top">Little Wonder Paper Co.</a><p>Little animals. Big possibilities.</p></div><nav aria-label="Storefronts"><a class="button" style="margin-top:0;padding:15px 24px;box-shadow:0 0 0 1px #faf7ee" href="https://payhip.com/LittleWonderPaperCo">Coloring pages on Payhip <span aria-hidden="true">↗</span></a><a class="button" style="margin-top:0;padding:15px 24px;box-shadow:0 0 0 1px #faf7ee" href="https://classful.com/littlewonderpaperco/">Workbook resources on Classful <span aria-hidden="true">↗</span></a></nav></div><div class="wrap footer-bottom"><small>© 2026 Little Wonder Paper Co.</small><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
+<footer><div class="wrap footer-main"><div><a class="footer-brand" href="#top">Little Wonder Paper Co.</a><p>Little animals. Big possibilities.</p></div><nav aria-label="Storefronts"><a class="button" style="margin-top:0;padding:15px 24px;box-shadow:0 0 0 1px #faf7ee" href="https://payhip.com/LittleWonderPaperCo">Coloring pages on Payhip <span aria-hidden="true">↗</span></a><a class="button" style="margin-top:0;padding:15px 24px;box-shadow:0 0 0 1px #faf7ee" href="https://classful.com/littlewonderpaperco/">Workbook resources on Classful <span aria-hidden="true">↗</span></a></nav></div><div class="wrap footer-bottom"><small>© 2026 Little Wonder Paper Co.</small><div class="footer-utility"><button class="privacy-settings" type="button">Pinterest tracking settings</button><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></div></footer>
 </body>
 </html>
