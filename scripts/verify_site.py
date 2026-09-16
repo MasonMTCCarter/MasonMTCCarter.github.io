@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+from xml.etree import ElementTree
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -106,11 +107,21 @@ def main() -> int:
             errors.append(f"missing required links: {', '.join(sorted(missing_links))}")
         for reference in parsed.references:
             parsed_url = urlsplit(reference)
-            if parsed_url.scheme or reference.startswith("#") or not reference:
+            if not reference or parsed_url.scheme or parsed_url.netloc:
                 continue
             local_path = (parsed_url.path or reference).lstrip("/")
-            if not (site / local_path).is_file():
+            if parsed_url.fragment and not parsed_url.path:
+                if parsed_url.fragment not in parsed.anchors:
+                    errors.append(f"unresolved local fragment in index.html: #{parsed_url.fragment}")
+                continue
+            target = site / local_path
+            if not target.is_file():
                 errors.append(f"unresolved local reference in index.html: {reference}")
+            elif parsed_url.fragment and target.suffix.lower() in {".html", ".htm"}:
+                target_parser = ReferenceParser()
+                target_parser.feed(target.read_text(encoding="utf-8"))
+                if parsed_url.fragment not in target_parser.anchors:
+                    errors.append(f"unresolved local fragment in index.html: {reference}")
 
     for relative_path, dimensions in (
         ("assets/downloads/free-capybara-astronaut-us-letter.pdf", ("612", "792")),
@@ -124,12 +135,23 @@ def main() -> int:
     if not sitemap.is_file():
         errors.append("generated sitemap.xml is missing")
     else:
-        sitemap_text = sitemap.read_text(encoding="utf-8")
-        if "https://www.littlewonderpaperco.works/" not in sitemap_text:
+        try:
+            sitemap_root = ElementTree.parse(sitemap).getroot()
+            sitemap_locations = {
+                element.text
+                for element in sitemap_root.iter()
+                if element.tag.rsplit("}", 1)[-1] == "loc"
+            }
+        except ElementTree.ParseError as error:
+            errors.append(f"sitemap.xml is not valid XML: {error}")
+            sitemap_locations = set()
+        if "https://www.littlewonderpaperco.works/" not in sitemap_locations:
             errors.append("sitemap.xml does not contain the canonical homepage")
 
     robots = site / "robots.txt"
-    if robots.is_file():
+    if not robots.is_file():
+        errors.append("generated robots.txt is missing")
+    else:
         robots_text = robots.read_text(encoding="utf-8")
         expected_sitemap = "Sitemap: https://www.littlewonderpaperco.works/sitemap.xml"
         if expected_sitemap not in robots_text:
